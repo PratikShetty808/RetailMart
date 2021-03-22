@@ -1,0 +1,22 @@
+{
+  "name": "retailmart",
+  "version": "1.0.0",
+  "description": "MERN retailmart app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PratikShetty808/RetailMart.git"
+  },
+  "author": "Pratik Shetty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PratikShetty808/RetailMart/issues"
+  },
+  "homepage": "https://github.com/PratikShetty808/RetailMart#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
