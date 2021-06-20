@@ -48,6 +48,10 @@ h3 {
 .searchboxp{
   padding-left: 35px;
 }
+.actionicon{
+  display: flex;
+  justify-content: space-around;
+}
 .mainbg{
   background-color: #394b53;
 }
@@ -55,6 +59,7 @@ h3 {
   color: rgb(255, 196, 0);
 }
 .pagination{
+  padding-top: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -75,6 +80,16 @@ h3 {
  }
  .center Button{
    width: 15pc;
+ }
+ .tablestyl{
+  padding: 1.5rem;
+  border: 2px solid black;
+  background: rgb(23 22 22);
+  border-radius: 5px;
+  color: #000 !important;
+ }
+ .tablestyl thead tr{
+   background: darkgrey;
  }
 .footerstyl{
   padding: 10px !important;
