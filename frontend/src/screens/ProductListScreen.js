@@ -92,6 +92,7 @@ const ProductListScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+          <div className="tablestyl">
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
               <tr>
@@ -100,7 +101,7 @@ const ProductListScreen = ({ history, match }) => {
                 <th>PRICE</th>
                 <th>CATEGORY</th>
                 <th>BRAND</th>
-                <th></th>
+                <th>ACTION</th>
               </tr>
             </thead>
             <tbody>
@@ -112,23 +113,26 @@ const ProductListScreen = ({ history, match }) => {
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
                   <td>
+                    <div className="actionicon">
                     <LinkContainer to={`/admin/product/${product._id}/edit`}>
                       <Button variant='light' className='btn-sm'>
                         <i className='fas fa-edit'></i>
                       </Button>
                     </LinkContainer>
-                    <Button
+                   <Button
                       variant='danger'
-                      className='btn-sm'
+                      className='btn-sm '
                       onClick={() => deleteHandler(product._id)}
                     >
                       <i className='fas fa-trash'></i>
                     </Button>
+                   </div>
                   </td>
                 </tr>
               ))}
             </tbody>
           </Table>
+          </div>
           <Paginate pages={pages} page={page} isAdmin={true} />
         </>
       )}
