@@ -38,7 +38,11 @@ const RegisterScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign Up</h1>
+      <div class="logincontainer">
+      <div className="ICondiv">
+        <div className="user"></div>
+      </div>
+      <h1 className="center">Sign Up</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
@@ -82,10 +86,11 @@ const RegisterScreen = ({ location, history }) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-
-        <Button type='submit' variant='primary'>
-          Register
-        </Button>
+        <div className="center">
+          <Button type='submit' variant='primary '>
+            Register
+          </Button>
+        </div>
       </Form>
 
       <Row className='py-3'>
@@ -96,7 +101,9 @@ const RegisterScreen = ({ location, history }) => {
           </Link>
         </Col>
       </Row>
-    </FormContainer>
+
+      </div>
+          </FormContainer>
   )
 }
 

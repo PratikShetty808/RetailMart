@@ -19,12 +19,15 @@ const Header = () => {
   return (
     <header>
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
-        <Container>
+      <div className="ICondiv">
+        <div className="gif"></div>
+      </div>
+        <Container className="headContainer">
           <LinkContainer to='/'>
             <Navbar.Brand>RetailMart</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse id='basic-navbar-nav'>
+          <Navbar.Collapse id='basic-navbar-nav' className="searchboxp">
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
