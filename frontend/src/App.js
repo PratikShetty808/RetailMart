@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import './index.css'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -23,7 +24,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3'>
+      <main className='py-3 mainbg'>
         <Container>
           <Route path='/login' component={LoginScreen} />
           <Route path='/order/:id' component={OrderScreen} />

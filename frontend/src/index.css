@@ -5,6 +5,87 @@ main {
 h3 {
   padding: 1rem 0;
 }
+.srcbtn{
+  color: black !important;
+  background-color: #00bc8c !important;
+  width: 110px;
+  font-weight: 900;
+}
+.btn-outline-success:hover {
+  color: black !important;
+  background-color: #076851 !important;
+}
+
+.gif{
+  background-image: url(./img/icon.gif);
+  background-size: contain; 
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 46px;
+}
+.user{
+    background-image: url(./img/user.gif);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 26pc;
+    height: 3pc;
+    position: relative;
+    left: 40%;
+}
+.headContainer{
+  float: left;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+}
+
+.searchbox{
+  width:23pc !important;
+}
+.Signinbtn{
+  width: 30px;
+}
+.searchboxp{
+  padding-left: 35px;
+}
+.mainbg{
+  background-color: #394b53;
+}
+.rating{
+  color: rgb(255, 196, 0);
+}
+.pagination{
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logincontainer{
+  width: 80%;
+  min-height: 28pc;
+  border: 2px solid black;
+  padding: 2rem;
+  margin-top: 10%;
+  margin-left: 15%;
+  background: #303030!important;
+}
+ .center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ }
+ .center Button{
+   width: 15pc;
+ }
+.footerstyl{
+  padding: 10px !important;
+}
+.footer{
+  background: #303030!important ;
+}
+
+
 
 a,
 a:active,
