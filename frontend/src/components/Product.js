@@ -21,6 +21,7 @@ const Product = ({ product }) => {
           <Rating
             value={product.rating}
             text={`${product.numReviews} reviews`}
+            className='rating'
           />
         </Card.Text>
 

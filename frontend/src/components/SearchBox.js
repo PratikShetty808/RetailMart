@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
-
+import '../index.css'
 const SearchBox = ({ history }) => {
   const [keyword, setKeyword] = useState('')
 
@@ -20,9 +20,9 @@ const SearchBox = ({ history }) => {
         name='q'
         onChange={(e) => setKeyword(e.target.value)}
         placeholder='Search Products...'
-        className='mr-sm-2 ml-sm-5'
+        className='mr-sm-2 ml-sm-7 searchbox'
       ></Form.Control>
-      <Button type='submit' variant='outline-success' className='p-2'>
+      <Button type='submit' variant='outline-success' className='p-2 srcbtn'>
         Search
       </Button>
     </Form>
