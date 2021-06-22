@@ -97,7 +97,8 @@ const ProductEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Product Details</h1>
+        <div className=" productDetail logincontainer">
+        <h1 className="center">Product Details</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -110,8 +111,7 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
-                placeholder='Enter name'
-                value={name}
+                placeholder='Product name'
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
@@ -121,7 +121,6 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Control
                 type='number'
                 placeholder='Enter price'
-                value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
@@ -188,6 +187,7 @@ const ProductEditScreen = ({ match, history }) => {
             </Button>
           </Form>
         )}
+        </div>
       </FormContainer>
     </>
   )

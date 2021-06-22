@@ -72,6 +72,20 @@ h3 {
   margin-left: 15%;
   background: #303030!important;
 }
+.useredit{
+  width: 52%;
+  min-height: 22pc;
+  margin-top: 0%;
+  margin-left: 23%;
+}
+.productDetail{
+  width: 100%;
+  margin-top: 0;
+ margin-left: 0;
+}
+.dropdown :hover{
+  color: #00bc8c !important;
+}
  .center{
   display: flex;
   align-items: center;
@@ -87,6 +101,17 @@ h3 {
   background: rgb(23 22 22);
   border-radius: 5px;
   color: #000 !important;
+ }
+
+ .userprofile{
+  border: 2px solid #302f2f;
+  background: #303030;
+  padding: 2pc;
+  border-radius: 14px;
+ }
+ .profilemain{
+  margin-top: 30px;
+  margin-left: -148px;
  }
  .tablestyl thead tr{
    background: darkgrey;

@@ -52,7 +52,8 @@ const UserEditScreen = ({ match, history }) => {
       <Link to='/admin/userlist' className='btn btn-light my-3'>
         Go Back
       </Link>
-      <FormContainer>
+      <div className="logincontainer useredit">
+      
         <h1>Edit User</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
@@ -96,7 +97,8 @@ const UserEditScreen = ({ match, history }) => {
             </Button>
           </Form>
         )}
-      </FormContainer>
+      
+      </div>
     </>
   )
 }

@@ -54,8 +54,10 @@ const ProfileScreen = ({ location, history }) => {
   }
 
   return (
+    <div className="profilemain">
     <Row>
-      <Col md={3}>
+      <Col md={4}>
+      <div className="userprofile">
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {}
@@ -111,14 +113,16 @@ const ProfileScreen = ({ location, history }) => {
             </Button>
           </Form>
         )}
+        </div>
       </Col>
-      <Col md={9}>
+      <Col md={8}>
         <h2>My Orders</h2>
         {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
           <Message variant='danger'>{errorOrders}</Message>
         ) : (
+          <div className="tablestyl">
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
               <tr>
@@ -127,7 +131,7 @@ const ProfileScreen = ({ location, history }) => {
                 <th>TOTAL</th>
                 <th>PAID</th>
                 <th>DELIVERED</th>
-                <th></th>
+                <th>ACTION</th>
               </tr>
             </thead>
             <tbody>
@@ -161,9 +165,11 @@ const ProfileScreen = ({ location, history }) => {
               ))}
             </tbody>
           </Table>
+          </div>
         )}
       </Col>
     </Row>
+    </div>
   )
 }
 
