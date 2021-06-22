@@ -6,7 +6,7 @@ import Product from '../models/productModel.js'
 // @access Public
 
 const getProducts = asyncHandler(async (req, res) => {
-  const pageSize = 6
+  const pageSize = 10
   const page = Number(req.query.pageNumber) || 1
 
   const keyword = req.query.keyword
@@ -105,6 +105,23 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 })
 
+// @desc Update a product
+// @route PUT /api/products/:id
+// @access Private/Admin
+
+const updateProductStock = asyncHandler(async (req, res) => {
+  const { countInStock } = req.body
+  const product = await Product.findById(req.params.id)
+
+  if (product) {
+    product.countInStock = countInStock
+    const updatedProductStock = await product.save()
+    res.json(updatedProductStock)
+  } else {
+    res.status(404)
+    throw new Error('Product not found')
+  }
+})
 // @desc Create new review
 // @route POST /api/products/:id/reviews
 // @access Private
@@ -162,6 +179,7 @@ export {
   getProductById,
   deleteProduct,
   createProduct,
+  updateProductStock,
   updateProduct,
   createProductReview,
   getTopProducts,
