@@ -1,5 +1,7 @@
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
+import Category from '../models/categoryModel.js'
+
 
 // @desc Fetch all products
 // @route GET /api/products
@@ -38,6 +40,17 @@ const getProductById = asyncHandler(async (req, res) => {
   } else {
     res.status(404)
     throw new Error('Product not found')
+  }
+})
+
+const getProductByCategory = asyncHandler(async (req, res) => {
+  const category = await Category.findById(req.params.id)
+
+  if (category) {
+    res.json(await Product.find({category : category.id}))
+  } else {
+    res.status(404)
+    throw new Error('Category not found')
   }
 })
 
@@ -174,6 +187,9 @@ const getTopProducts = asyncHandler(async (req, res) => {
   res.json(products)
 })
 
+
+
+
 export {
   getProducts,
   getProductById,
@@ -183,4 +199,5 @@ export {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getProductByCategory
 }
