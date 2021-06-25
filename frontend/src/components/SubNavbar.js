@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SubNavBar = styled.nav`
     width: 100%;
@@ -41,7 +41,7 @@ const SubLink = styled(Link)`
     }
 `;
 
-const SubNavbar = () => {
+const SubNavbar = (props) => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth < 990);
 
     const updateMedia = () => {
@@ -54,37 +54,18 @@ const SubNavbar = () => {
 
     return !screenWidth ? (
         <SubNavBar>
-            <SubLink to="/laptops">
-                <NavItem>
-                    <i className="fas fa-laptop" style={{ marginRight: '0.5rem' }}></i>
-                    Laptops
+            {props?.category.map((item) => (
+                <SubLink to={`/category/${item.name}`}>
+                    <NavItem>
+                        <i className="fas fa-laptop" style={{ marginRight: '0.5rem' }}></i>
+                    {item.name}
                 </NavItem>
-            </SubLink>
-            <SubLink to="/tvs">
-                <NavItem>
-                    <i className="fas fa-tv" style={{ marginRight: '0.5rem' }}></i>
-                    TVs 
-                </NavItem>
-            </SubLink>
-            <SubLink to="/phones">
-                <NavItem>
-                    <i className="fas fa-mobile-alt" style={{ marginRight: '0.5rem' }}></i>
-                    Phones
-                </NavItem>
-            </SubLink>
-            <SubLink to="/headphone">
-                <NavItem>
-                    <i className="fas fa-headphones" style={{ marginRight: '0.5rem' }}></i>
-                    HeadPhones
-                </NavItem>
-            </SubLink>
-            <SubLink to="/game">
-                <NavItem style={{borderRight: 'none'}}>
-                    <i className="fas fa-gamepad" style={{ marginRight: '0.5rem' }}></i>
-                    Gaming
-                </NavItem>
-            </SubLink>
+                </SubLink>
+            ))
+            }
         </SubNavBar>
+
+
     ) : null
 }
 

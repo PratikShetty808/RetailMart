@@ -9,7 +9,6 @@ import Paginate from '../components/Paginate'
 import { listProducts } from '../actions/productActions'
 import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
-import SubNavbar from '../components/SubNavbar'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -28,7 +27,6 @@ const HomeScreen = ({ match }) => {
   return (
     <>
       <Meta />
-      <SubNavbar/>
       <h1>Trending</h1>
       {!keyword ? (
         <ProductCarousel />

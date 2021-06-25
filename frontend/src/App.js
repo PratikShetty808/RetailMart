@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
+import axios from 'axios'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './index.css'
 import { Container } from 'react-bootstrap'
@@ -19,16 +20,31 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import CategoryScreen from './screens/CategoryScreen'
+import SubNavbar from './components/SubNavbar'
+
 
 const App = () => {
+
+  const [category, setCategory] = useState([])
+
+  useEffect(() => {
+    axios.get('/api/category/getCategory').then((res) => {
+      setCategory(res.data.category)
+    })
+    
+  }, [])
+
   return (
     <Router>
       <Header />
+      <SubNavbar category={category}/>
       <main className='py-3 mainbg'>
         <Container>
           <Route path='/login' component={LoginScreen} />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/payment' component={PaymentScreen} />
+          <Route path='/category/:name' component={CategoryScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/register' component={RegisterScreen} />
