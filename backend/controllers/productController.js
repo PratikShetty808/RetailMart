@@ -44,10 +44,11 @@ const getProductById = asyncHandler(async (req, res) => {
 })
 
 const getProductByCategory = asyncHandler(async (req, res) => {
-  const category = await Category.findById(req.params.id)
-
+  console.log(req.params)
+  const category = await Product.find({"category": req.params.category})
+// console.log(category)
   if (category) {
-    res.json(await Product.find({category : category.id}))
+    res.send(category)
   } else {
     res.status(404)
     throw new Error('Category not found')
